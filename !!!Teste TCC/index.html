@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>EGR Doc</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/js/mdb.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@8.19.0/dist/sweetalert2.css">
+
+    <style>
+        html {
+            overflow-y: scroll;
+        }
+        .testeonly{
+            height: 10px;
+            width: 10px;
+            padding-top: 10px; padding-right: 10px; padding-left: 10px; padding-bottom: 10px; 
+        }
+        .xyz { 
+			background-size: auto; 
+			text-align: center; 
+			padding-top: 100px; 
+		} 
+		.btn-circle.btn-sm { 
+			width: 30px; 
+			height: 30px; 
+			padding: 6px 0px; 
+			border-radius: 15px; 
+			font-size: 8px; 
+			text-align: center; 
+		} 
+		.btn-circle.btn-md { 
+			width: 50px; 
+			height: 50px; 
+			padding: 7px 10px; 
+			border-radius: 25px; 
+			font-size: 10px; 
+			text-align: center; 
+		} 
+		.btn-circle.btn-xl { 
+			width: 70px; 
+			height: 70px; 
+			padding: 10px 16px; 
+			border-radius: 35px; 
+			font-size: 12px; 
+			text-align: center; 
+		}
+        .pft-box{
+            padding-top: 5px;
+            padding-left: 5px;
+            height: 10px;
+            width: 10px;
+            margin-top: 10px;
+            padding-top: 15px;
+        }
+        .waves-effect{
+            border-radius: 0px;
+            /* overflow:visible; */
+            overflow-y:hidden;
+            
+        }
+        html {
+            overflow-y: hidden; /* Hide vertical scrollbar */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+        [name="swal2-radio"]{
+		display: none;
+		
+	    }
+    </style>
+</head>
+
+<body >
+    <nav class="navbar navbar-dark navbar-expand navigation-clean-search">
+        <div class="container"><a class="navbar-brand" onclick="resetall();"><i class="fas fa-rainbow"></i>&nbsp; Prismatic</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                
+                <ul  class="navbar-nav mx-auto nav-flex-icons" target="_self">
+                    <li  id="BtnResults" style="display: none;" class="nav-item" role="presentation"><button type="button" class="btn btn-outline-secondary btn-rounded waves-effect" style=" left: 70%;margin: 0px; padding-top: 5px; padding-right: 14px; padding-left: 14px; padding-bottom: 5px;">Resultado</button></li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto nav-flex-icons" target="_self">
+                    <li class="nav-item" role="presentation"><a href="add.php" class="rounded-circle btn btn-dark" style="padding-top: 10px; padding-right: 10px; padding-left: 10px; padding-bottom: 10px; margin: 0px; width: 40px; height: 40px;"><i class="fas fa-info"></i></a></li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <div>
+    <div style="height: 91vh">
+        <div class="flex-center flex-column" >
+            <div id="MapFrame" class="z-depth-1-half map-container" style="display: none; height: 100%; width: 100%;">
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1589200428996!6m8!1m7!1sCAoSLEFGMVFpcE9keDlqTTFPM1RYV0FkX1BjWFNxZGlQRGg3Sk9id1NxZFFfQW5m!2m2!1d35.71299167658904!2d139.7221881821451!3f228.17848997463975!4f-6.538017778483507!5f0.4000000000000002" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            
+            <h1  id="main-logo" class="text-hide animated fadeIn mb-5" style="background-image: url(http://localhost/!!!Teste%20TCC/assets/img/onlylogo.png); width: 250px; height: 257px;"></h1>
+            <h5  id="main-btn" class="animated fadeIn mb-1" style="width: 400px;"><button type="button" onclick="abrirPerguntas();" class="btn btn-block btn-mdb-color waves-effect">Iniciar Experiência</button></h5>
+            
+        </div>
+        
+    </div>
+    </div>
+
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+    <script>
+
+        function resetall(){
+            delete(pontocores);
+            var pontocores = {};
+            // Amarelo
+            pontocores["amarelo"] = 0;
+            // Azul
+            pontocores["azul"] = 0;
+            // Vermelho
+            pontocores["vermelho"] = 0;
+            //verde
+            pontocores["verde"] = 0;
+            //violeta
+            pontocores["violeta"] = 0;
+            //laranja
+            pontocores["laranja"] = 0;
+
+            delete(arrayOrdenado);
+
+            console.log(pontocores)
+
+            $("#main-logo").show();
+            $("#main-btn").show();
+            $("#MapFrame").hide();
+            $("#BtnResults").hide();
+        }
+
+
+        var pontocores = {};
+        // Amarelo
+        pontocores["amarelo"] = 0;
+        // Azul
+        pontocores["azul"] = 0;
+        // Vermelho
+        pontocores["vermelho"] = 0;
+        //verde
+        pontocores["verde"] = 0;
+        //violeta
+        pontocores["violeta"] = 0;
+        //laranja
+        pontocores["laranja"] = 0;
+
+
+        var respcores = [];
+
+    // Amarelo
+        
+        respcores[0] = [];
+        respcores[0][0] = [false, "amarelo", +1];
+
+        respcores[1] = [];
+        respcores[1][0] = [true, "amarelo", +1];
+
+        respcores[2] = [];
+        respcores[2][0] = [false, "amarelo", +1];
+        respcores[2][1] = [false, "laranja", +1];
+    
+    // Azul
+        respcores[3] = [];
+        respcores[3][0] = [true, "azul", +1];
+        respcores[3][1] = [true, "verde", +1];
+
+        respcores[4] = [];
+        respcores[4][0] = [false, "azul", +1];
+
+        respcores[5] = [];
+        respcores[5][0] = [false, "azul", +1];
+
+    // Vermelho
+        respcores[6] = [];
+        respcores[6][0] = [false, "vermelho", +1];
+        respcores[6][1] = [false, "amarelo", +1];
+
+        respcores[7] = [];
+        respcores[7][0] = [true, "vermelho", +1];
+
+        respcores[8] = [];
+        respcores[8][0] = [true, "vermelho", +1];
+
+    // Verde
+        respcores[9] = [];
+        respcores[9][0] = [true, "verde", +1];
+        respcores[9][1] = [true, "violeta", +1];
+
+        respcores[10] = [];
+        respcores[10][0] = [true, "verde", +1];
+
+        respcores[11] = [];
+        respcores[11][0] = [true, "verde", +1];
+        respcores[11][1] = [true, "vermelho", +1];
+
+    // Violeta
+        respcores[12] = [];
+        respcores[12][0] = [true, "violeta", +1];
+
+        respcores[13] = [];
+        respcores[13][0] = [true, "violeta", +1];
+
+        respcores[14] = [];
+        respcores[14][0] = [true, "violeta", +1];
+        respcores[14][1] = [true, "azul", +1];
+
+    // Laranja
+        respcores[15] = [];
+        respcores[15][0] = [true, "laranja", +1];
+
+        respcores[16] = [];
+        respcores[16][0] = [true, "laranja", +1];
+
+        respcores[17] = [];
+        respcores[17][0] = [true, "laranja", +1];
+        respcores[17][1] = [true, "vermelho", +1];
+
+
+
+
+
+
+
+
+
+
+        const respostas = {
+            true: '<button id="btnsim" type="button" class="btn btn-block btn-success" onclick="selecionarSim()" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSim&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>',
+            false: '<button id="btnnao" type="button" class="btn btn-block btn-danger" onclick="selecionarNao()" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNão&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>'
+        }
+        
+        const perguntas = [
+            { text: 'Você sente que seu sistema digestivo está funcionando corretamente?' },
+            { text: 'Você acha que precisa ser mais otimista em suas escolhas de vida?' },
+            { text: 'Você é concentrado?' },
+
+            { text: 'Ultimamente, você se sente estressado?' },
+            { text: 'Está tendo boas noites de sono?' },
+            { text: 'Você se sente seguro em suas relações?' },
+
+            { text: 'Você se alimenta bem?' },
+            { text: 'Precisa de mais paixão em suas relações?' },
+            { text: 'Você se sente deprimido a maior parte do tempo?' },
+
+            { text: 'Você sente que precisa de momentos calmos?' },
+            { text: 'Você tem a memória fraca?' },
+            { text: 'Você é sensível?' },
+
+            { text: 'Você é uma pessoa que muda de humor facilmente?' },
+            { text: 'Você tem certeza de suas ações?' },
+            { text: 'Você tem dores de cabeças frequentes?' },
+
+            { text: 'Você é uma pessoa extrovertida?' },
+            { text: 'Você tem muitos traumas?' },
+            { text: 'Você deseja ter poder?' },
+        ]
+        
+        var progresso = []
+        for(var i = 0; i < perguntas.length; i++){
+            progresso[i] = (i+1);
+        }
+        
+        function abrirPerguntas(){	
+            
+            
+            Swal.mixin({
+                title: '',
+                
+                input: 'radio',
+                confirmButtonText: 'Próximo',
+                progressStepsDistance: '0px',
+                progressSteps: progresso,
+                progressStepsDistance: '0px',
+                inputOptions: respostas,
+                inputValidator: (value) => {
+                    if (!value) {
+                    return 'Escolha uma resposta'
+                    }
+                }
+            }).queue(perguntas).then((result) => {
+            if (result.value) {
+                    //const answers = JSON.stringify(result.value)
+
+                    for(var i in result.value){
+                        
+                        for(var o in respcores[i]){
+                            
+                            var resp = (result.value[i]=="true")?true:false;
+
+                            if(resp == respcores[i][o][0]){
+                                console.log("passou");
+
+                                pontocores[respcores[i][o][1]] += respcores[i][o][2];
+                            }
+                        }
+                    }
+
+                    var arrayOrdenado = [];
+                    for (var cor in pontocores){
+                        arrayOrdenado.push({"cor": cor, "pontuacao": pontocores[cor]});
+                    }
+
+                    arrayOrdenado.sort(function(a, b){return b.pontuacao - a.pontuacao});
+
+                    $("#main-logo").hide();
+                    $("#main-btn").hide();
+                    $("#MapFrame").show();
+                    $("#BtnResults").show();
+
+                    Swal.fire({
+                    title: 'All done!',
+                    html: `
+                        Your answers:
+                        <pre><code>${result.value.length}</code></pre>
+                    `,
+                    confirmButtonText: 'Lovely!'
+                    })
+                }
+                });
+        }
+        function selecionarSim(){
+            document.querySelector("[name='swal2-radio'][value='true']").checked = true;
+            $('#btnnao').removeClass('active');
+            $('#btnsim').addClass('active');
+            Swal.progressStepsDistance('0px');
+        }
+        function selecionarNao(){
+            document.querySelector("[name='swal2-radio'][value='false']").checked = true;
+            $('#btnsim').removeClass('active');
+            $('#btnnao').addClass('active');
+        }
+        
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
+    
+
+    
+
+
+</body>
+
+</html>
